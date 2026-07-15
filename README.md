@@ -28,6 +28,7 @@ The current MVP focuses on a reusable TypeScript core plus a thin CLI wrapper. F
 
 ```text
 packages/
+  config/        # Shared ESLint and TypeScript configuration
   core/          # XML parsing, KML analysis, validation, diagnostics
   cli/           # File I/O and command formatting only
   parser/        # Reserved future package boundary

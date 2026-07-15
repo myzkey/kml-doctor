@@ -1,0 +1,22 @@
+{
+  "name": "@kml-doctor/config",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "exports": {
+    "./eslint": "./eslint/base.js",
+    "./eslint/root": "./eslint/root.js",
+    "./prettier/base.json": "./prettier/base.json",
+    "./tsconfig/base.json": "./tsconfig/base.json",
+    "./vitest/root": "./vitest/root.ts"
+  },
+  "dependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint-config-prettier": "^10.1.8",
+    "typescript-eslint": "^8.64.0"
+  },
+  "peerDependencies": {
+    "eslint": "^10.0.1",
+    "typescript": "~6.0.2"
+  }
+}
