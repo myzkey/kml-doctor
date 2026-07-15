@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { readFile, stat } from 'node:fs/promises';
 import { basename, resolve } from 'node:path';
+import { pathToFileURL } from 'node:url';
 import { doctorKml, getKmlInfo, validateKml } from '@kml-doctor/core';
 import { formatDoctor, formatInfo, formatValidate } from './format.js';
 
@@ -84,12 +85,17 @@ export const run = async (argv: string[]): Promise<number> => {
   return result.valid ? 0 : 1;
 };
 
-run(process.argv.slice(2))
-  .then((exitCode) => {
-    process.exitCode = exitCode;
-  })
-  .catch((error: unknown) => {
-    const message = error instanceof Error ? error.message : 'Unexpected error';
-    process.stderr.write(`${message}\n`);
-    process.exitCode = 1;
-  });
+const isEntrypoint =
+  process.argv[1] !== undefined && import.meta.url === pathToFileURL(resolve(process.argv[1])).href;
+
+if (isEntrypoint) {
+  run(process.argv.slice(2))
+    .then((exitCode) => {
+      process.exitCode = exitCode;
+    })
+    .catch((error: unknown) => {
+      const message = error instanceof Error ? error.message : 'Unexpected error';
+      process.stderr.write(`${message}\n`);
+      process.exitCode = 1;
+    });
+}
