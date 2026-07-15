@@ -22,7 +22,7 @@ The current MVP focuses on a reusable TypeScript core plus a thin CLI wrapper. F
 - `kml-doctor doctor <file.kml>`
 - `--json` output for all commands
 - XML parsing, KML statistics, coordinate validation, polygon validation, and operational diagnostics
-- ESM, TypeScript strict, Node.js 20+
+- ESM, TypeScript strict, Node.js 24+
 
 ## Monorepo Layout
 
