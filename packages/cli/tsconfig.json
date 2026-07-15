@@ -1,5 +1,5 @@
 {
-  "extends": "@kml-doctor/config/tsconfig/base.json",
+  "extends": "../../tooling/config/tsconfig/base.json",
   "compilerOptions": {
     "composite": true,
     "rootDir": "src",

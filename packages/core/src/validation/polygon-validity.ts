@@ -1,5 +1,5 @@
-import { coordinatesEqual, parseCoordinateText } from '../coordinates.js';
-import { elementsByName } from '../dom.js';
+import { coordinatesEqual, parseCoordinateText } from '../parser/coordinates.js';
+import { elementsByName } from '../parser/dom.js';
 import type { KmlDiagnostic } from '../types.js';
 import type { DiagnosticRule } from './types.js';
 import { targetName } from './helpers.js';

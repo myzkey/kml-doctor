@@ -7,21 +7,27 @@ settings:
 importers:
   .:
     devDependencies:
-      '@kml-doctor/config':
-        specifier: workspace:*
-        version: link:packages/config
+      '@eslint/js':
+        specifier: ^10.0.1
+        version: 10.0.1(eslint@10.7.0)
       '@types/node':
         specifier: ^24.13.2
         version: 24.13.3
       eslint:
         specifier: ^10.0.1
         version: 10.7.0
+      eslint-config-prettier:
+        specifier: ^10.1.8
+        version: 10.1.8(eslint@10.7.0)
       prettier:
         specifier: ^3.9.5
         version: 3.9.5
       typescript:
         specifier: ~6.0.2
         version: 6.0.3
+      typescript-eslint:
+        specifier: ^8.64.0
+        version: 8.64.0(eslint@10.7.0)(typescript@6.0.3)
       vitest:
         specifier: ^4.1.10
         version: 4.1.10(@types/node@24.13.3)(vite@8.1.4(@types/node@24.13.3))
@@ -31,24 +37,6 @@ importers:
       '@kml-doctor/core':
         specifier: workspace:*
         version: link:../core
-
-  packages/config:
-    dependencies:
-      '@eslint/js':
-        specifier: ^10.0.1
-        version: 10.0.1(eslint@10.7.0)
-      eslint:
-        specifier: ^10.0.1
-        version: 10.7.0
-      eslint-config-prettier:
-        specifier: ^10.1.8
-        version: 10.1.8(eslint@10.7.0)
-      typescript:
-        specifier: ~6.0.2
-        version: 6.0.3
-      typescript-eslint:
-        specifier: ^8.64.0
-        version: 8.64.0(eslint@10.7.0)(typescript@6.0.3)
 
   packages/core:
     dependencies:

@@ -1,7 +1,7 @@
-import { attributeValue, elementsByName } from '../dom.js';
+import { attributeValue, elementsByName } from '../parser/dom.js';
 import type { KmlDiagnostic } from '../types.js';
-import type { DiagnosticRule } from './types.js';
-import { targetName } from './helpers.js';
+import { targetName } from '../validation/helpers.js';
+import type { DiagnosticRule } from '../validation/types.js';
 
 export const styleReferencesRule: DiagnosticRule = {
   name: 'style-references',

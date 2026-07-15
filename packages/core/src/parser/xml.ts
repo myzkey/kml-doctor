@@ -1,5 +1,5 @@
 import { DOMParser, type Document as XmlDocument } from '@xmldom/xmldom';
-import type { KmlDiagnostic } from './types.js';
+import type { KmlDiagnostic } from '../types.js';
 
 export interface ParsedXml {
   document: XmlDocument | null;

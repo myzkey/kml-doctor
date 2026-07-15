@@ -1,4 +1,4 @@
-import { elementsByName } from '../dom.js';
+import { elementsByName } from '../parser/dom.js';
 import type { KmlDiagnostic } from '../types.js';
 import type { DiagnosticRule } from './types.js';
 import { targetName } from './helpers.js';

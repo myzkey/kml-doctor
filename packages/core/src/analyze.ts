@@ -1,8 +1,9 @@
 import type { Document as XmlDocument } from '@xmldom/xmldom';
-import { extendBounds, parseCoordinateText, validateCoordinate } from './coordinates.js';
-import { elementsByName } from './dom.js';
-import { doctorRules, validationRules } from './rules/index.js';
-import type { RuleContext } from './rules/types.js';
+import { doctorRules } from './diagnostics/index.js';
+import { extendBounds, parseCoordinateText, validateCoordinate } from './parser/coordinates.js';
+import { elementsByName } from './parser/dom.js';
+import { validationRules } from './validation/index.js';
+import type { RuleContext } from './validation/types.js';
 import type {
   BoundingBox,
   KmlDiagnostic,
@@ -13,7 +14,7 @@ import type {
   KmlStats,
   KmlValidateResult,
 } from './types.js';
-import { parseXml } from './xml.js';
+import { parseXml } from './parser/xml.js';
 
 const emptyStats = (sizeBytes?: number): KmlStats => ({
   fileSizeBytes: sizeBytes,

@@ -1,6 +1,6 @@
-import { directChildrenByName, elementsByName } from '../dom.js';
-import type { DiagnosticRule } from './types.js';
-import { targetName } from './helpers.js';
+import { directChildrenByName, elementsByName } from '../parser/dom.js';
+import { targetName } from '../validation/helpers.js';
+import type { DiagnosticRule } from '../validation/types.js';
 
 export const emptyFolderRule: DiagnosticRule = {
   name: 'empty-folder',

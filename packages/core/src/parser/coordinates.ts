@@ -1,4 +1,4 @@
-import type { BoundingBox, Coordinate, KmlDiagnostic } from './types.js';
+import type { BoundingBox, Coordinate, KmlDiagnostic } from '../types.js';
 
 export const parseCoordinateToken = (token: string): Coordinate | null => {
   const parts = token.split(',');

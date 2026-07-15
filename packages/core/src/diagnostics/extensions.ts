@@ -1,4 +1,4 @@
-import type { DiagnosticRule } from './types.js';
+import type { DiagnosticRule } from '../validation/types.js';
 
 export const gxExtensionRule: DiagnosticRule = {
   name: 'gx-extension',

@@ -28,12 +28,18 @@ The current MVP focuses on a reusable TypeScript core plus a thin CLI wrapper. F
 
 ```text
 packages/
-  config/        # Shared ESLint and TypeScript configuration
   core/          # XML parsing, KML analysis, validation, diagnostics
   cli/           # File I/O and command formatting only
-  parser/        # Reserved future package boundary
-  validator/     # Reserved future package boundary
-  diagnostics/   # Reserved future package boundary
+```
+
+Supporting development configuration lives outside the package graph:
+
+```text
+tooling/config/
+  eslint/
+  prettier/
+  tsconfig/
+  vitest/
 ```
 
 Planned package additions:
@@ -44,17 +50,16 @@ packages/
   vscode/
 ```
 
-The core is intentionally moving toward a rule-based diagnostic engine:
+The core separates responsibilities internally without creating empty packages:
 
 ```text
-packages/core/src/rules/
-  polygon-validity.ts
-  placemark-name.ts
-  style-references.ts
-  geometry.ts
+packages/core/src/
+  parser/        # XML/KML DOM parsing and coordinate helpers
+  validation/    # strict validation rules
+  diagnostics/   # doctor/interoperability rules
 ```
 
-Rules are registered as arrays, which keeps the door open for future profiles such as Google Earth, DJI, QGroundControl, or strict OGC-oriented checks.
+Rules are registered as arrays, which keeps the door open for future profiles such as Google Earth, DJI, QGroundControl, or strict OGC-oriented checks. If these boundaries become stable and need independent release cycles, they can later be extracted into packages.
 
 ## Setup
 
@@ -210,3 +215,4 @@ The core package accepts strings and returns plain JSON-compatible objects. File
 - Web UI
 - VSCode Extension
 - npm library packaging
+- Extract parser, validation, or diagnostics into standalone packages when their API boundaries are stable

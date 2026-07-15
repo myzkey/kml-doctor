@@ -1,7 +1,7 @@
-import { elementsByName, textOfFirstDescendant } from '../dom.js';
+import { elementsByName, textOfFirstDescendant } from '../parser/dom.js';
 import type { KmlDiagnostic } from '../types.js';
-import type { DiagnosticRule } from './types.js';
-import { targetName } from './helpers.js';
+import { targetName } from '../validation/helpers.js';
+import type { DiagnosticRule } from '../validation/types.js';
 
 const supportedAltitudeModes = new Set(['clampToGround', 'relativeToGround', 'absolute']);
 
